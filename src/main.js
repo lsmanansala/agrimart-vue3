@@ -1,8 +1,17 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap"
+
+import { Quasar } from 'quasar'
+import '@quasar/extras/material-icons/material-icons.css'
+import 'quasar/src/css/index.sass'
+
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+const myApp = createApp(App)
+myApp.use(Quasar, {
+  plugins: {}
+})
+myApp.use(router)
+
+myApp.mount('#app')
